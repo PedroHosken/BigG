@@ -168,6 +168,8 @@ export const profileData = {
 
   contato: {
     email: "drgilmarreis@gmail.com",
+    telefone: "(31) 9214-0236",
+    consultorioWhatsapp: "5531992140236",
     whatsapp: "",
     localizacao: "Belo Horizonte – Minas Gerais, Brasil",
     lattesUrl: "#",

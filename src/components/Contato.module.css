@@ -17,7 +17,7 @@
 }
 
 .bottomRow .card {
-  flex: 0 1 calc(33.333% - 12px);
+  flex: 0 1 calc(33.333% - 16px);
 }
 
 .card {
@@ -81,6 +81,22 @@
 
 .card a:hover {
   color: var(--accent);
+}
+
+.highlight {
+  border-color: var(--accent);
+  background: #fff;
+}
+
+.highlight .icon {
+  color: var(--accent);
+}
+
+.cardNote {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-style: italic;
 }
 
 @media (max-width: 768px) {
