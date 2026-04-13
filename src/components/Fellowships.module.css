@@ -1,0 +1,110 @@
+.fellowGrid {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.badge {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  text-align: center;
+  min-width: 220px;
+  flex: 1;
+  max-width: 300px;
+  box-shadow: var(--shadow);
+  transition: all var(--transition);
+  border: 1px solid rgba(200, 169, 97, 0.3);
+}
+
+.badge:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--accent);
+}
+
+.sigla {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.descricao {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+}
+
+.subTitle {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.residencias {
+  max-width: 650px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.residenciaItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  flex-wrap: wrap;
+}
+
+.periodo {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: rgba(200, 169, 97, 0.1);
+  padding: 3px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.residenciaItem strong {
+  font-size: 0.95rem;
+  color: var(--primary);
+}
+
+.instituicao {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .fellowGrid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .badge {
+    max-width: 100%;
+  }
+
+  .residenciaItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}

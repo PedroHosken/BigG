@@ -1,0 +1,102 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.bottomRow {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 24px;
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bottomRow .card {
+  flex: 0 1 calc(33.333% - 12px);
+}
+
+.card {
+  text-align: center;
+  padding: 32px 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-alt);
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transform: scaleX(0);
+  transition: transform var(--transition);
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-hover);
+  border-color: var(--accent);
+  transform: translateY(-6px);
+  background: #fff;
+}
+
+.icon {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 14px;
+  transition: color var(--transition);
+}
+
+.card:hover .icon {
+  color: var(--accent);
+}
+
+.card h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.card a,
+.card p {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  word-break: break-word;
+}
+
+.card a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 340px;
+  }
+
+  .bottomRow {
+    flex-direction: column;
+    align-items: center;
+    max-width: 340px;
+  }
+
+  .bottomRow .card {
+    flex: 1;
+    width: 100%;
+  }
+}

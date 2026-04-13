@@ -1,0 +1,137 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+  transition: background var(--transition), box-shadow var(--transition);
+}
+
+.scrolled {
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(10px);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.scrolled .logo {
+  color: var(--primary);
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+
+.menu a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color var(--transition);
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width var(--transition);
+}
+
+.menu a:hover::after,
+.activeLink::after {
+  width: 100% !important;
+}
+
+.scrolled .menu a {
+  color: var(--text);
+}
+
+.scrolled .menu a:hover {
+  color: var(--primary);
+}
+
+/* Toggle */
+
+.toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  transition: var(--transition);
+}
+
+.scrolled .toggle span {
+  background: var(--text);
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .toggle {
+    display: flex;
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--primary-dark);
+    flex-direction: column;
+    padding: 80px 32px 32px;
+    gap: 0;
+    transition: right var(--transition);
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .open {
+    right: 0;
+  }
+
+  .menu a {
+    display: block;
+    padding: 14px 0;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}
